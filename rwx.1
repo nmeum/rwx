@@ -1,0 +1,65 @@
+.Dd $Mdocdate$
+.Dt RWX 1
+.Os
+.Sh NAME
+.Nm rwx
+.Nd run a command while X is running
+.Sh SYNOPSIS
+.Nm rwx
+.Ar command
+.Sh DESCRIPTION
+The
+.Nm
+utility opens a connection to the current Xorg
+.Ev DISPLAY
+and keeps it open, afterwards it invokes the specified
+.Ar command
+thereby binding it to the lifetime of a specific display/server. If the
+server does a reset before the command terminates the command receives a
+SIGTERM.
+.Pp
+The main purpose of
+.Nm
+is invoking commands from your
+.Pa .xsession
+or
+.Pa .xinitrc
+startup file and making sure that these commands terminate when your X
+server does.
+.Sh ENVIRONMENT
+.Bl -tag -width DISPLAY
+.It Ev DISPLAY
+.br
+Name of the X display to connect to.
+.Sh EXIT STATUS
+If the specfied
+.Ar command
+terminates before the X server does,
+.Nm
+exits with the exit status of the spawned command. If the X server does
+a reset before the command completes
+.Nm
+exits with the exit status zero.
+.Pp
+If an error occurs, e.g. if
+.Nm
+couldn't open a connection to the current
+.Ev DISPLAY
+or if the given
+.Ar command
+couldn't be invoked
+.Nm
+exits with a non-zero exit status.
+.Sh EXAMPLES
+An example for a program that is usally invoked by the startup files
+mentioned above is
+.Xr redshift 1
+to start it using
+.Nm
+you would add the following to your startup file:
+.Pp
+.Dl rwx redshift -l 23.42:13.37 >/dev/null &
+.Sh AUTHORS
+.An Sören Tempel Aq Mt soeren@soeren-tempel.net
+.Sh BUGS
+This utility is a horrible hack.
