@@ -16,7 +16,7 @@ and keeps it open, afterwards it invokes the specified
 .Ar command
 thereby binding it to the lifetime of a specific display/server. If the
 server does a reset before the command terminates the command receives a
-SIGTERM.
+SIGHUP.
 .Pp
 The main purpose of
 .Nm

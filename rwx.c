@@ -58,7 +58,7 @@ evloop(int fd, pid_t chld)
 		 * likely closed by the X server and we can terminate
 		 * our program.
 		 */
-		if (kill(chld, SIGTERM) == -1)
+		if (kill(chld, SIGHUP) == -1)
 			die("kill failed");
 		exit(EXIT_SUCCESS);
 	}
