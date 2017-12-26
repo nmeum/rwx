@@ -6,7 +6,7 @@ rwx
 Installation
 ------------
 
-This utility depend on libX11 if you already have libX11 installed you
+This utility depends on libX11 if you already have libX11 installed you
 just need to make sure that the `X11INC` and `X11LIB` variables in the
 `Makefile` point to the right directories. If that's the case you can
 compile and install rwx using:
