@@ -1,7 +1,7 @@
 rwx
 ===
 
-Run a program **w**hile **X** is **r**unning.
+**R**un a program **w**hile **X** is running.
 
 Installation
 ------------
