@@ -73,7 +73,7 @@ main(int argc, char **argv)
 	struct sigaction sa;
 
 	if (argc < 2) {
-		fprintf(stderr, "Usage: %s CMD...\n", basename(argv[0]));
+		fprintf(stderr, "Usage: %s COMMAND ...\n", basename(argv[0]));
 		return EXIT_FAILURE;
 	}
 

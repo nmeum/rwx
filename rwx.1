@@ -6,7 +6,7 @@
 .Nd run a command while X is running
 .Sh SYNOPSIS
 .Nm rwx
-.Ar command
+.Ar command ...
 .Sh DESCRIPTION
 The
 .Nm
@@ -34,7 +34,7 @@ Name of the X display to connect to.
 .Sh EXIT STATUS
 If the specfied
 .Ar command
-terminates before the X server does,
+terminates before the X server,
 .Nm
 exits with the exit status of the spawned command. If the X server does
 a reset before the command completes
