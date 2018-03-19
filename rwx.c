@@ -29,7 +29,6 @@ chld(int num, siginfo_t *info, void *ctx)
 static void
 evloop(int fd, pid_t chld)
 {
-	(void)chld;
 	struct pollfd fds[1];
 
 	fds[0] = (struct pollfd) {
