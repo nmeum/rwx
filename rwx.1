@@ -1,4 +1,4 @@
-.Dd December 26 2017
+.Dd $Mdocdate: December 26 2017 $
 .Dt RWX 1
 .Os
 .Sh NAME
@@ -14,9 +14,9 @@ utility opens a connection to the current Xorg
 .Ev DISPLAY
 and keeps it open, afterwards it invokes the specified
 .Ar command
-thereby binding it to the lifetime of a specific display/server. If the
-server does a reset before the command terminates the command receives a
-SIGHUP.
+thereby binding it to the lifetime of a specific display/server.
+If the server does a reset before the command terminates the command
+receives a SIGHUP.
 .Pp
 The main purpose of
 .Nm
@@ -31,13 +31,14 @@ server does.
 .It Ev DISPLAY
 .br
 Name of the X display to connect to.
+.El
 .Sh EXIT STATUS
 If the specfied
 .Ar command
 terminates before the X server,
 .Nm
-exits with the exit status of the spawned command. If the X server does
-a reset before the command completes
+exits with the exit status of the spawned command.
+If the X server does a reset before the command completes
 .Nm
 exits with the exit status zero.
 .Pp
